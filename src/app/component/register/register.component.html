@@ -1,0 +1,71 @@
+<body>
+<br>
+<div class="col-md-12">
+  <div class="card card-container">
+    <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card"/>
+    <div class="register-form">
+      <form [formGroup]="form">
+        <div class="form-group">
+          <label>Имя пользователя</label>
+          <input type="text" formControlName="username" class="form-control"
+                 [ngClass]="{ 'is-invalid': f['username'].errors }"/>
+          <div *ngIf="f['username'].errors" class="invalid-feedback">
+            <div *ngIf="f['username'].errors['required']">Поле обязательно для заполнения</div>
+            <div *ngIf="f['username'].errors['minlength']">
+              Имя пользователя должно содержать более 6 символов
+            </div>
+            <div *ngIf="f['username'].errors['maxlength']">
+              Имя пользователя не должно превышать 20 символов
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Пароль</label>
+          <input type="password" formControlName="password" class="form-control"
+                 [ngClass]="{ 'is-invalid': f['password'].errors}"/>
+          <div *ngIf="f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors['required']">Поле обязательно для заполнения</div>
+            <div *ngIf="f['password'].errors['minlength']">Пароль должен содержать более 6 символов</div>
+            <div *ngIf="f['password'].errors['maxlength']">Пароль не должен превышать 40 символов</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Подтверждение пароля</label>
+          <input type="password" formControlName="confirmPassword" class="form-control"
+                 [ngClass]="{ 'is-invalid': f['confirmPassword'].errors }"/>
+          <div *ngIf="f['confirmPassword'].errors" class="invalid-feedback">
+            <div *ngIf="f['confirmPassword'].errors['required']">
+              Поле обязательно для заполнения
+            </div>
+            <div *ngIf="f['confirmPassword'].errors['matching']">
+              Пароли не совпадают
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="select">Роль</label>
+          <select id="select" formControlName="role"
+                  class="form-control" [ngClass]="{ 'is-invalid': submitted && f['role'].errors}">
+            <option type="radio" value="ROLE_STUDENT">Студент</option>
+            <option type="radio" value="ROLE_COMPANY">Компания</option>
+          </select>
+          <div *ngIf="submitted && f['role'].errors" class="invalid-feedback">
+            <div *ngIf="f['role'].errors['required']">Необходимо выбрать роль пользователя</div>
+          </div>
+        </div>
+        <br>
+        <div class="form-group">
+          <button type="submit" (click)="onSubmit()" class="btn btn-primary" [disabled]="!form.valid">Регистрация
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="alert alert-warning" *ngIf="submitted && isSignUpFailed">
+      Вход не выполнен!<br/>{{ errorMessage }}
+    </div>
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Вход выполнен успешно!
+    </div>
+  </div>
+</div>
+</body>

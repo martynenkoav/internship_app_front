@@ -1,0 +1,85 @@
+<cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
+<section class="row-section">
+  <br>
+  <div class="container">
+    <div class="col-md-10 offset-md-1 row-block">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="!hasAccess">
+        Пожалуйста, зарегистрируйтесь и войдите в аккаунт, чтобы видеть информацию о компаниях.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert"
+           *ngIf="internships && internships.length == 0">
+        Извините, стажировок на данный момент нет.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Закрыть">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+
+      <input class="form-control" id="myInput" type="text" placeholder="Поиск.."
+             *ngIf="internships.length != 0"
+             (change)="filterSearch($event)">
+      <br>
+      <mat-select id="select" class="form-control"
+                  *ngIf="internships.length != 0"
+                  [formControl]="tagsForSearch"
+                  (selectionChange)="filterTags(tagsForSearch)" multiple="true">
+        <mat-option *ngFor="let tag of tags" [value]="tag.viewValue">{{tag.viewValue}}</mat-option>
+      </mat-select>
+      <br>
+      <div class="p-3 py-5" *ngIf="isStudent">
+        <div class="btn-group">
+          <a [class]="currentButton === 'all' ? 'btn btn-checked' : 'btn btn-default'" (click)="ngOnInit()">Все
+            стажировки</a>
+          <a [class]="currentButton === 'student' ? 'btn btn-checked' : 'btn btn-default'"
+             (click)="showStudentsInternships()">Мои стажировки</a>
+          <a [class]="currentButton === 'advice' ? 'btn btn-checked' : 'btn btn-default'"
+             (click)="getRecommendationInternships()">Рекомендации</a>
+        </div>
+      </div>
+      <br>
+     <!-- <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+        <div *cdkVirtualFor="let internship of viewInternships" class="example-item">{{internship.name}}</div>
+      </cdk-virtual-scroll-viewport>-->
+
+
+        <ul id="sortable" *cdkVirtualFor="let internship of viewInternships">
+          <li>
+            <div class="media">
+              <div class="media-body">
+                <h6 class="mb-1">Теги: {{internship.tags}}</h6>
+                <div class="d-flex w-100 justify-content-between">
+                  <h3 class="mb-1">{{internship.name}}</h3>
+                  <h4 *ngIf="isStudent&&isInStudentsList(internship.id)">Вы уже откликнулись</h4>
+                </div>
+                <pre></pre>
+                <div class="d-flex w-100 justify-content-between" data-toggle="tooltip"
+                     title="Нажмите на компанию чтобы посмотреть информацию" *ngIf="hasAccess; else elseBlock">
+                  <h5 class="mb-1" (click)="goToCompany(internship.company_id)">{{internship.company.name}}</h5>
+                </div>
+                <pre></pre>
+                <p class="mb-1">{{internship.description}}</p>
+              </div>
+              <pre></pre>
+              <div class="media-right align-self-center">
+                <pre></pre>
+                <button href="#" class="btn btn-default"
+                        (click)="goToTheLink(internship); addInternshipToStudent(internship.id);"
+                        *ngIf="isStudent">Откликнуться
+                </button>
+                <ng-template #elseBlock><h5 class="mb-1">{{internship.company.name}}<br><br></h5></ng-template>
+              </div>
+            </div>
+          </li>
+          <br>
+        </ul>
+    </div>
+  </div>
+</section>
+</cdk-virtual-scroll-viewport>
+<script>
+  $('[data-toggle="tooltip"]').tooltip({
+    placement: 'right',
+  });
+</script>

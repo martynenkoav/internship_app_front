@@ -1,0 +1,105 @@
+<section class="row-section">
+  <br>
+  <div class="container">
+    <div class="col-md-10 offset-md-1 row-block">
+      <form [formGroup]="internshipForm">
+        <div class="form-group row">
+          <label for="inputName" class="col-sm-2 col-form-label">Название</label>
+          <div class="col-sm-10">
+            <input id="inputName" formControlName="name" class="form-control" name="name">
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <label for="inputDescription" class="col-sm-2 col-form-label">Описание</label>
+          <div class="col-sm-10">
+            <textarea id="inputDescription" formControlName="description" class="form-control"
+                      name="description"></textarea>
+          </div>
+        </div>
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br><br>
+
+        <div class="form-group row">
+          <label for="inputUrl" class="col-sm-2 col-form-label">Ссылка на форму</label>
+          <div class="col-sm-10">
+            <input id="inputUrl" formControlName="url" class="form-control" name="url">
+          </div>
+        </div>
+        <br>
+
+        <div class="form-group row">
+          <label for="select" class="col-sm-2 col-form-label">Тэг</label>
+          <div class="col-sm-10">
+            <mat-select id="select" class="form-control" [formControl]="tags" multiple="true">
+              <mat-option *ngFor="let tag of tagsAll" [value]="tag.value">{{tag.viewValue}}</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <br>
+        <div class="form-group row">
+          <div class="media-right align-self-center">
+            <a class="btn btn-default" data-bs-toggle="modal" data-bs-target="#postInternship"
+               (click)="postInternship()"> Добавить </a>
+          </div>
+        </div>
+        <br>
+      </form>
+    </div>
+
+    <div class="col-md-10 offset-md-1 row-block">
+      <input class="form-control" id="myInput" type="text" placeholder="Поиск..." (change)="filterList($event)">
+      <br>
+      <ul id="sortable" *ngFor="let internship of internships">
+        <li>
+          <div class="media">
+            <div class="media-body">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">Количество откликов: {{internship.responses}}</h5>
+              </div>
+              <h6 class="mb-1">Теги: {{internship.tags}}</h6>
+              <div class="d-flex w-100 justify-content-between">
+                <h4 class="mb-1">{{internship.name}}</h4>
+              </div>
+              <pre></pre>
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1">{{company.name}}</h5>
+              </div>
+              <pre></pre>
+              <p class="mb-1">{{internship.description}}</p>
+            </div>
+            <div class="media-right align-self-center">
+              <a class="btn btn-default" data-bs-toggle="modal" data-bs-target="#deleteInternship">Удалить </a>
+            </div>
+            <pre></pre>
+            <div class="modal fade" id="deleteInternship" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Подтверждение</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Вы действительно хотите удалить данную стажировку?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-default" data-bs-dismiss="modal"
+                            (click)="deleteInternship(internship.id)">Удалить
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <br>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#example-getting-started').multiselect();
+  });
+</script>

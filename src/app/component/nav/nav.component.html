@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav ms-auto">
+    <li [hidden]="!isLoggedIn" class="nav-item">
+      <a *ngIf="this.roles.includes('ROLE_STUDENT'); else elseBlock" href class="nav-link"
+         routerLink="/student">Профиль</a>
+    </li>
+    <ng-template #elseBlock><a href class="nav-link" routerLink="/company">Профиль</a></ng-template>
+
+    <li [hidden]="isLoggedIn" class="nav-item">
+      <a class="nav-link" routerLink="/register">Регистрация</a>
+    </li>
+    <li [hidden]="isLoggedIn" class="nav-item">
+      <a class="nav-link" routerLink="/login">Войти</a>
+    </li>
+    <li [hidden]="!isLoggedIn" class="nav-item">
+      <a href class="nav-link" (click)="logout()">Выйти</a>
+    </li>
+  </ul>
+</nav>

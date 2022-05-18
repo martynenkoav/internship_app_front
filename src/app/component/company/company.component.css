@@ -1,0 +1,41 @@
+.row-section {
+  background: #734b6d;
+}
+
+.row-section h4 {
+  text-align: center;
+  width: 100%;
+  color: #42275a;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.row-section .row-block {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.btn-default {
+  background: #6B456A;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+  word-wrap: break-word;
+}
+
+.alert-message .alert-icon {
+  width: 3rem;
+}
+.alert-message .close{
+  font-size: 1rem;
+  color: #a6a6a6;
+}
+.alert-primary .alert-icon {
+  background-color: #b8daff;
+}

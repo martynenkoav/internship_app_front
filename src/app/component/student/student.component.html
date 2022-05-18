@@ -1,0 +1,59 @@
+<section class="row-section">
+  <div class="container rounded bg-white">
+    <div class="row">
+      <div class="col-md-3 border-right">
+        <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+          <img class="rounded-circle mt-5"
+               width="150px"
+               src="../../../assets/images/studentProfile.jpg">
+        </div>
+      </div>
+      <div class="col-md-6 border-right">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center mb-6">
+            <h4 class="text-center">Настройки профиля стажера</h4>
+          </div>
+          <div class="row mt-2">
+            <div class="col-md-12"><label class="labels">Имя</label>
+              <input id="inputFirstName" #name="ngModel" type="text" [(ngModel)]="student.firstName"
+                     class="form-control"
+                     name="firstName"></div>
+            <div class="col-md-12"><br><label class="labels">Фамилия</label>
+              <input id="inputLastName" #description="ngModel" type="text" [(ngModel)]="student.lastName"
+                     class="form-control"
+                     name="lastName"></div>
+            <div class="col-md-12"><br><label class="labels">Отчество</label>
+              <input id="inputPatronymic" #name="ngModel" type="text" [(ngModel)]="student.patronymic"
+                     class="form-control"
+                     name="patronymic"></div>
+            <div class="col-md-12"><br><label class="labels">Почта</label>
+              <input id="inputEmail" #email="ngModel" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                     [(ngModel)]="student.email" class="form-control"
+                     name="email">
+              <div *ngIf="email.errors &&(email.touched || email.dirty)" class="alert alert-danger">
+                <div [hidden]="!email.errors?.['pattern']">
+                  Неверный формат почты
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12"><br><label class="labels">Номер телефона</label>
+              <input id="inputPhone" #name="ngModel" type="text" [(ngModel)]="student.phone" class="form-control"
+                     name="phone"></div>
+          </div>
+          <br>
+          <div class="mt-4 text-center"><a class="btn btn-default" (click)="postStudent()"> Сохранить изменения </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 m-5">
+        <div class="p-3 py-5">
+          <div class="d-flex justify-content-between align-items-center experience">
+            <a class="btn btn-default" routerLink="/internship/int">&nbsp;
+              Просмотр всех стажировок
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

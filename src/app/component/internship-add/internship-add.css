@@ -1,0 +1,154 @@
+.row-section {
+  float: left;
+  width: 100%;
+  background: #734b6d;
+}
+
+.row-section h5 {
+  float: left;
+  width: 100%;
+  color: #42275a;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.row-section h5 span {
+  font-family: 'Libre Baskerville', serif;
+  display: block;
+  font-size: 45px;
+  text-transform: none;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-weight: 700;
+}
+
+.row-section h5 a {
+  color: #d2abce;
+}
+
+.row-section .row-block {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.row-section .row-block ul {
+  margin: 0;
+  padding: 0;
+}
+
+.row-section .row-block ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.row-section .row-block ul li:last-child {
+  margin-bottom: 0;
+}
+
+.row-section .row-block ul li:hover {
+  cursor: grabbing;
+}
+
+.row-section .row-block .media {
+  border: 1px solid #d5dbdd;
+  padding: 5px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.04);
+  background: #fff;
+}
+
+.row-section .media .media-left img {
+  width: 75px;
+}
+
+.row-section .media .media-body p {
+  padding: 0 15px;
+  font-size: 14px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.row-section .media .media-body h4 {
+  color: #6b456a;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-left: 14px;
+  margin-top: 12px;
+}
+
+.row-section .media .media-body h6 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+  padding-left: 14px;
+  margin-top: 12px;
+  color: #400ca4;
+}
+
+.btn-default {
+  background: #6B456A;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+textarea {
+  height: 520%;
+  font-size: 14px;
+  resize: none;
+  white-space: pre;
+}
+
+.media {
+  border: 1px solid #d5dbdd;
+  padding: 5px 20px;
+  border-radius: 5px;
+  background: #fff;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .5
+}
+
+button.close {
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  -webkit-appearance: none
+}
+
+.moreText {
+  display: none;
+}
+
+.read-more-btn {
+  background: #6B456A;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+}
+
+.text.show-more .moreText {
+  display: inline;
+}
+
+.text.show-more .dots {
+  display: none;
+}
+
+#more {
+  display: none;
+}

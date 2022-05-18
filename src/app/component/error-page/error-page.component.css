@@ -1,0 +1,27 @@
+body {
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+}
+
+.container h1 {
+  font-size: 8rem;
+  letter-spacing: 10px;
+  margin: 0;
+}
+
+.container h4 {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.img {
+  background: #f5f5f5;
+}

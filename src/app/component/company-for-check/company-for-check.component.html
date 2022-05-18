@@ -1,0 +1,70 @@
+<section class="row-section">
+  <br>
+  <div class="container">
+    <div class="col-md-10 offset-md-1 row-block">
+      <div class="container rounded bg-white">
+        <div class="row">
+          <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+              <img class="rounded-circle mt-5"
+                   src="../../../assets/images/companyProfile.jpg"
+                   width="150px">
+            </div>
+          </div>
+          <div class="col-md-6 border-right">
+            <div class="p-3 py-5">
+              <div class="d-flex justify-content-between align-items-center mb-6">
+                <h3 class="text-center">Профиль компании</h3>
+              </div>
+              <div class="row mt-2">
+                <div class="col-md-12"><label class="labels">Название</label>
+                  <div class=media>{{company.name}}</div>
+                </div>
+                <div class="col-md-12"><br><label class="labels">Описание</label>
+                  <div class="media">{{company.description}}</div>
+                </div>
+                <div class="col-md-12"><br><label class="labels">Почта</label>
+                  <div class="media">{{company.email}}</div>
+                </div>
+                <div class="col-md-12"><br><label class="labels">Адрес</label>
+                  <div class="media">{{company.name}}</div>
+                </div>
+              </div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-10 offset-md-1 row-block">
+      <input class="form-control" id="myInput" type="text" placeholder="Поиск..."
+             *ngIf="internships.length != 0"
+             (change)="filterList($event)">
+      <br>
+      <ul id="sortable" *ngFor="let internship of viewInternships">
+        <li>
+          <div class="media">
+            <div class="media-body">
+              <h6 class="mb-1">Тэги: {{internship.tags}}</h6>
+              <div class="d-flex w-100 justify-content-between">
+                <h3 class="mb-1">{{internship.name}}</h3>
+                <h4 *ngIf="isStudent&&isInStudentsList(internship.id)">Вы уже откликнулись</h4>
+              </div>
+              <pre></pre>
+              <p class="mb-1">{{internship.description}}</p>
+            </div>
+            <pre></pre>
+            <div class="media-right align-self-center">
+              <pre></pre>
+              <button href="#" class="btn btn-default"
+                      (click)="goToTheLink(internship); addInternshipToStudent(internship.id);"
+                      *ngIf="isStudent">Откликнуться
+              </button>
+            </div>
+          </div>
+        </li>
+        <br>
+      </ul>
+    </div>
+  </div>
+</section>
