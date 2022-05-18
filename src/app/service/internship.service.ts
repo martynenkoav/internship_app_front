@@ -13,7 +13,7 @@ export class InternshipService {
   constructor(private http: HttpClient) {
   }
 
-  INTERNSHIP_URL: string = environment.baseUrl + 'api/internship';
+  INTERNSHIP_URL: string = Const.LOCALHOST_URL + 'api/internship';
 
   public getInternshipsByUserId(id: number): Observable<Internship[]> {
     return this.http.get<Internship[]>(this.INTERNSHIP_URL + "/" + id);

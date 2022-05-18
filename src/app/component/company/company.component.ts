@@ -18,7 +18,7 @@ export class CompanyComponent implements OnInit {
     address: new FormControl(''),
   });
   public company: Company = new Company();
-  id: Number | undefined;
+  id: Number;
   public isEmpty: boolean = false;
   submitted: boolean = false;
 

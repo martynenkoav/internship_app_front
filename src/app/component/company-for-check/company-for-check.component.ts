@@ -34,8 +34,8 @@ enum TAGS {
 
 export class CompanyForCheckComponent implements OnInit {
 
-  viewInternships: Internship[];
-  internships: Internship[];
+  viewInternships: Internship[] = [];
+  internships: Internship[] = [];
   public company: Company;
   companyId: number;
   isStudent: boolean;

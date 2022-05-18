@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
-  AUTH_URL: string = environment.baseUrl + 'api/auth';
+  AUTH_URL: string = Const.LOCALHOST_URL + 'api/auth';
 
   login(user: User): Observable<any> {
     return this.http.post(this.AUTH_URL + '/signin', user, httpOptions);
