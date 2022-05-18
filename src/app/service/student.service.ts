@@ -14,7 +14,7 @@ export class StudentService {
   constructor(private http: HttpClient, private tokenStorageService: TokenStorageService) {
   }
 
-  STUDENT_URL: string = Const.LOCALHOST_URL + 'api/student';
+  STUDENT_URL: string = environment.apiUrl + 'api/student';
 
   public getStudentById(id: number): Observable<Student> {
     return this.http.get<Student>(this.STUDENT_URL + "/" + id);

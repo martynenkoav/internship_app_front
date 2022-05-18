@@ -15,7 +15,7 @@ export class CompanyService {
   constructor(private http: HttpClient) {
   }
 
-  private COMPANY_URL: string = Const.LOCALHOST_URL + 'api/company';
+  private COMPANY_URL: string = environment.apiUrl + 'api/company';
 
   public getCompanies(): Observable<any> {
     return this.http.get<any>(this.COMPANY_URL);
