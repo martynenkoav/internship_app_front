@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://findinternshipsapp.herokuapp.com'
+  apiUrl: 'https://findinternshipsapp.herokuapp.com/'
 };
