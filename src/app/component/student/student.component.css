@@ -1,3 +1,7 @@
+body {
+  overflow: scroll; /* Hide scrollbars */
+}
+
 .row-section {
   background: #734b6d;
 }
