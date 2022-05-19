@@ -1,6 +1,8 @@
+section {
+  overflow: auto;
+}
 
 .row-section {
-  overflow: auto;
   background: #734b6d;
 }
 
