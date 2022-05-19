@@ -4,3 +4,11 @@ html {
   background: #734b6d;
 }
 
+body{
+  -ms-overflow-style: none;
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
