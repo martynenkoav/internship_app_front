@@ -13,7 +13,6 @@ const routes: Routes = [
   {path: '', component: InternshipComponent},
   {path: 'company', component: CompanyComponent},
   {path: 'internship', component: InternshipComponent},
-  /* {path: 'internship', loadChildren:()=>import('./component/internship/internship.module').then(mod=>mod.InternshipModule)},*/
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'internship-add', component: InternshipAdd},
