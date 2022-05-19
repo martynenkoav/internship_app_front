@@ -1,5 +1,6 @@
-section {
-  overflow: auto;
+.example-viewport {
+  height: 670px;
+  background: #734b6d;
 }
 
 .row-section {
