@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav ms-auto">
+    <li [hidden]="isLoggedIn" class="nav-item">
+      <a class="nav-link" routerLink="/">На главную</a>
+    </li>
     <li [hidden]="!isLoggedIn" class="nav-item">
       <a *ngIf="this.roles.includes('ROLE_STUDENT'); else elseBlock" href class="nav-link"
          routerLink="/student">Профиль</a>
