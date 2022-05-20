@@ -69,28 +69,9 @@
                 <p class="mb-1">{{internship.description}}</p>
               </div>
               <div class="media-right align-self-center">
-                <a class="btn btn-default" data-bs-toggle="modal" data-bs-target="#deleteInternship">Удалить </a>
+                <a class="btn btn-default" data-bs-toggle="modal" (click)="deleteInternship(internship.id)">Удалить </a>
               </div>
               <pre></pre>
-              <div class="modal fade" id="deleteInternship" tabindex="-1" aria-labelledby="exampleModalLabel"
-                   aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Подтверждение</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>Вы действительно хотите удалить данную стажировку?</p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="submit" class="btn btn-default" data-bs-dismiss="modal"
-                              (click)="deleteInternship(internship.id)">Удалить
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </li>
           <br>
