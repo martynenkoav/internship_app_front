@@ -8,6 +8,7 @@ import {InternshipAdd} from "./component/internship-add/internship-add";
 import {StudentComponent} from "./component/student/student.component";
 import {CompanyForCheckComponent} from "./component/company-for-check/company-for-check.component";
 import {ErrorPageComponent} from "./component/error-page/error-page.component";
+import {SocketComponent} from "./websocket/socket/socket.component";
 
 const routes: Routes = [
   {path: '', component: InternshipComponent},
@@ -18,7 +19,8 @@ const routes: Routes = [
   {path: 'internship-add', component: InternshipAdd},
   {path: 'student', component: StudentComponent},
   {path: 'company-for-check/:id', component: CompanyForCheckComponent},
-  {path: 'error', component: ErrorPageComponent}
+  {path: 'error', component: ErrorPageComponent},
+  {path: 'socket', component: SocketComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,30 @@
+<div id="main-content" class="container">
+  <div class="col-md-6 border-right">
+    <div class="p-3 py-5">
+      <div class="d-flex justify-content-between align-items-center mb-6">
+        <h4 class="text-center">Живое общение</h4>
+      </div>
+      <form class="form-inline" name="test-form">
+        <div class="form-group">
+          <label for="text">Напишите то, чем хотите поделиться с пользователями сайта в реальном времени</label>
+          <input type="text" id="text" name="text" class="form-control" placeholder="Ваш текст..." [(ngModel)]="text">
+        </div>
+        <button id="send" class="btn btn-default" type="button" (click)="sendName()">Отправить</button>
+      </form>
+    </div>
+    <div class="row">
+      <div class="col-md-12" *ngIf="showConversation">
+        <table id="conversation" class="table table-striped">
+          <thead>
+          <tr>
+            <th>Ваше общение</th>
+          </tr>
+          </thead>
+          <tbody *ngFor="let greeting of greetings" >
+          <tr><td> {{greeting}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

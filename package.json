@@ -26,6 +26,8 @@
     "express": "^4.18.1",
     "path": "^0.12.7",
     "rxjs": "~7.5.0",
+    "sockjs-client": "^1.6.0",
+    "stompjs": "^2.3.3",
     "tslib": "^2.3.0",
     "typescript": "~4.6.2",
     "zone.js": "~0.11.4"

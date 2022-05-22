@@ -21,6 +21,7 @@ import {CompanyForCheckComponent} from './component/company-for-check/company-fo
 import {ErrorPageComponent} from './component/error-page/error-page.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ScrollingModule} from "@angular/cdk/scrolling";
+import { SocketComponent } from './websocket/socket/socket.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     InternshipAdd,
     StudentComponent,
     CompanyForCheckComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    SocketComponent
   ],
   imports: [
     BrowserModule,

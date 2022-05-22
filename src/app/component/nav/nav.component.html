@@ -1,5 +1,8 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <ul class="navbar-nav ms-auto">
+    <li [hidden]="!isLoggedIn" class="nav-item">
+      <a href class="nav-link" routerLink="/socket">Чат</a>
+    </li>
     <li [hidden]="isLoggedIn" class="nav-item">
       <a class="nav-link" routerLink="/">На главную</a>
     </li>
